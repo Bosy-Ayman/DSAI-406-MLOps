@@ -14,11 +14,29 @@ TAs | Aya Nageh and Osama Ghandour
 Grades | (final), (midterm and quizzes), (lab)
 Lab Policy| Assignments and quizzes
 Book | "_Practical MLOps: Operationalizing Machine Learning Models_", Noah Gift and Alfredo Deza, 2021
+Supplementary Book | "_Reliable Machine Learning: Applying SRE Principles to ML in Production_", Cathy Chen, Niall Richard Murphy, Kranti Parisa, D. Sculley, and Todd Underwood, 2022
+Other Resourse | [Indian Institute of Technology Course](https://study.iitm.ac.in/ds/course_pages/BSDA5014.html)
 Objective | Streamlining ML workflows through automation, including data management, model training, continuous integration/delivery, and monitoring to ensure reliability and efficiency. Students learn to build scalable pipelines using tools like MLflow, Docker, and cloud platforms, with focusing on reproducibility and real-world adaptability.
 Prerequitstis | Machine Learning, Deep Learning, PyTorch
 
 ---
+### Topics
 
+- Intro: what is MLOps, tasks for MLOps engineer, difference between MLOps and DevOps.
+- ML Pipelines & Data Management: Overview of data engineering tools and practices, data management principles for ML models, ML pipeline automation
+- ML Life cycle
+- Tracking model training & experimentation using MLFlow and Tensorboard, hyperparameter tuning and optimization.
+- MLOps Tools and Version Control
+	- Github 
+	- CI/CD: continuous integration and delivery, github actions
+	- Containers: environment, containers, docker files and structure, 
+- Model Serving Architectures: python packaging: microservices 
+- Cloud MLOps
+- Monitoring and Observability for Models: Monitoring and logging for ML models in production, techniques for monitoring model performance in production, logging and error tracking for ML systems, performance optimization and scaling strategies
+- Governance: Fairness, privacy and responsible AI 
+
+
+---
 ### Lectures
 
 Week| Date |Topic | Contents | Lecture | Assignment
