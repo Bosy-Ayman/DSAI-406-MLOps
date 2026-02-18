@@ -42,7 +42,7 @@ Prerequitstis | Machine Learning, Deep Learning, PyTorch
 Week| Date |Topic | Contents | Lecture | Assignment
 ---|---|---|---|---|---
 1| 02-09 | | | | 
-2| 02-16 | | | | 
+2| 02-16 | Introduction | Model development, DevOps, DataOps, MLOps | [Lecture 1](lectures/lec1.md) | [Assignment 1](assignments/assign1.md)
 3| 02-23 | | | | 
 4| 03-02 | | | | 
 5| 03-09 | | | | 
