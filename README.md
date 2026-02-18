@@ -65,8 +65,8 @@ Please note that the syllabus content is subject to change throughout the semest
 
 Topic| Percentage | Notes
 ---|---|---
-Lab Assignments | 10% |
-Final Lab | 15% | 
+Lab Assignments | 15% |
+Final Lab | 10% | 
 Quizzes | 15% | 
 Midterm | 20% | 
 Final | 40% | 
