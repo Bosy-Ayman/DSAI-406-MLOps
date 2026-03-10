@@ -1,0 +1,24 @@
+artifact_path: file:///C:/Users/pouss/Documents/CSAI/4th Year/Spring/MLops/assignments/assignment
+  3/mlruns/1/models/m-fd35f5acbddc44a28a5d9d438e52f9ea/artifacts
+flavors:
+  python_function:
+    config:
+      device: null
+    data: data
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.pytorch
+    pickle_module_name: mlflow.pytorch.pickle_module
+    python_version: 3.11.9
+  pytorch:
+    code: null
+    model_data: data
+    pytorch_version: 2.10.0+cu130
+mlflow_version: 3.10.1
+model_id: m-fd35f5acbddc44a28a5d9d438e52f9ea
+model_size_bytes: 7190563
+model_uuid: m-fd35f5acbddc44a28a5d9d438e52f9ea
+prompts: null
+run_id: 08c140e8a8244c35ba5f197410ce6b59
+utc_time_created: '2026-03-10 00:21:54.339910'
