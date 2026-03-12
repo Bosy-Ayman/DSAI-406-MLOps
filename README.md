@@ -45,7 +45,7 @@ Week| Date |Topic | Contents | Lecture | Assignment
 2| 02-16 | Introduction | Model development, DevOps, DataOps, MLOps | [Lecture 1](lectures/lec1.md) | [Assignment 1](assignments/assign1.md)
 3| 02-23 | Reproducibility | Conda, Git, Docker | [Lecture 2](lectures/lec2.md) | [Assignment 2](assignments/assign2.md)
 4| 03-02 | Tracking | MLflow, tracking API, experiments, runs, metrics, artifacts  | [Lecture 3](lectures/lec3.md) | [Assignment 3](assignments/assign3.md)
-5| 03-09 | | | | 
+5| 03-09 | CI/CD | Continuous integration and delivery, github actions, anatomy of a workflow yaml file, dependencies | [Lecture 4](lectures/lec4.md) | [Assignment 4](assignments/assign4.md)
 6| 03-16 | | | | 
 7| 03-23 | Eid | | | 
 8| 03-30 | Midterm? | | | 
