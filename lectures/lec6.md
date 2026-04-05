@@ -10,12 +10,31 @@ mdc: true
 lecture: 6
 slide:
   disableSlideNumbers: true
-slide_info: false
+addons:
+  - slidev-component-poll
+  - slidev-addon-sync
+  # - slidev-addon-qrcode
+# defaults:
+#   slide_info: false
 zoom: 1
+syncSettings:
+  server: http://192.168.1.183:8080
+  enabled: true
+syncStates:
+  poll:
+    presenter: false
+    init: false
+  pollUsers:
+    presenter: false
+  # Add the following lines if you want to also sync slidev channels
+  # shared: ["page", "clicks", "cursor", "lastUpdate"]
+  drawings: true
+pollSettings:
+  anonymous: true # Highly recommended so they don't have to login
 ---
 
 # ML Engineering for Production <br> (DSAI 406)
-## Lecture #slidev.configs.lecture
+## Lecture {{$slidev.configs.lecture}}
 
 Mohamed Ghalwash
 <Email v="mghalwash@zewailcity.edu.eg" />
@@ -237,8 +256,21 @@ layout: top-title
 layout: center
 ---
 
-# Discussion
-### Which "Midterm Trick" was the most frustrating to debug? 
+# Discussion (POLL)
+
+
+
+<Poll question="Which midterm trick was the most frustrating to debug?" editable=true controlled=true displayResults="poll" >
+
+YAML Structure Anatomy
+
+Dependencies
+
+Docker - Build vs Run
+
+</Poll>
+
+# [http://192.168.1.183:3030](http://192.168.1.183:3030)
 
 ---
 layout: cover
@@ -566,6 +598,18 @@ jobs:
 layout: center
 class: text-center
 ---
+
+<!-- <div class="flex justify-center mt-10">
+  <QRCode 
+    :width="300" 
+    :height="300" 
+    data="http://192.168.1.183:8080" 
+    :margin="10"
+    :dotsOptions="{ type: 'extra-rounded', color: '#4F46E5' }"
+    type="svg"
+  />
+</div> -->
+
 
 # Learn More
 
