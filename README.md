@@ -46,10 +46,10 @@ Week| Date |Topic | Contents | Lecture | Assignment
 3| 02-23 | Reproducibility | Conda, Git, Docker | [Lecture 2](lectures/lec2.md) | [Assignment 2](assignments/assign2.md)
 4| 03-02 | Tracking | MLflow, tracking API, experiments, runs, metrics, artifacts  | [Lecture 3](lectures/lec3.md) | [Assignment 3](assignments/assign3.md)
 5| 03-09 | CI/CD | Continuous integration and delivery, github actions, anatomy of a workflow yaml file, dependencies | [Lecture 4](lectures/lec4.md) | [Assignment 4](assignments/assign4.md)
-6| 03-16 | | | | 
+6| 03-16 | CI/CD | gradual use cases, integration of MLflow, docker, dvc into CI/CD | [Lecture 5](lectures/lec5.md) | [Assignment 5](assignments/assign5.md)
 7| 03-23 | Eid | | | 
-8| 03-30 | Midterm? | | | 
-9| 04-06 | | | | 
+8| 03-30 | Midterm | | | 
+9| 04-06 | Conditional | Review midterm, conditional execution | [Lecture 6](lectures/lec6.md) | [Assignment 6](assignments/assign6.md)
 10| 04-13 | Sham El Nessim? | | | 
 11| 04-20 | | | | 
 12| 04-27 | | | | 
