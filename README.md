@@ -51,8 +51,8 @@ Week| Date |Topic | Contents | Lecture | Assignment
 8| 03-30 | Midterm | | | 
 9| 04-06 | Conditional | Review midterm, conditional execution | [Lecture 6](lectures/lec6.md) | [Assignment 6](assignments/assign6.md)
 10| 04-13 | Sham El Nessim? | | | 
-11| 04-20 | Quiz | | | 
-12| 04-27 | Lab Quiz + Kubernets, kubeflow | | | 
+11| 04-20 | Quiz | | | [Assignment 7](assignments/assign7.md)  
+12| 04-27 | Lab Quiz + Kubernets, kubeflow | Kubernetes, cluster architecture, nodes, pods, service, volume, control plane | [Lecture 7](lectures/lec7.md) | [Assignment 8](assignments/assign8.md) 
 13| 05-04 | Monitoring and Logging | | | 
 14| 05-11 | Final lab + Git and Docker deeper look | | | 
 15| 05-18 | Prepare for Final | | | 
