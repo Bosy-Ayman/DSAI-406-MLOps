@@ -547,7 +547,7 @@ What happens when your PersonaCanvas store goes viral? Or when a container crash
 
 - Scaling: you can increase the number of AI model instances instantly
   ```bash
-    kubectl scale deployment personacanvas-backend --replicas=10
+  kubectl scale deployment personacanvas-backend --replicas=10
   ```
 
   - you can manually "kill" a pod to simulate a crash
@@ -559,7 +559,7 @@ What happens when your PersonaCanvas store goes viral? Or when a container crash
 
 - Updating your AI model to a new version without any downtime
 ```bash
-kubectl set image deployment/personacanvas-backend streamlit-web=your-docker-username/new-ai-image:v2
+kubectl set image deployment/personacanvas-backend generator-core=your-docker-username/new-ai-image:v2
 ```
 
 ---
