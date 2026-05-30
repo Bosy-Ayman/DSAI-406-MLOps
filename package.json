@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "slidev-addon-sync": "^0.1.0",
+    "slidev-component-poll": "^3.0.0"
+  }
+}
