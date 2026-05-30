@@ -6,18 +6,18 @@ Repository for the MLOps undergraduate course (DSAI 406) for the 2025-2026 acade
 
 ### Logistics
 
-Course | MLOps - DSAI 406
----|----
-Webpage| [https://github.com/m-fakhry/DSAI-406-MLOps](https://github.com/m-fakhry/DSAI-406-MLOps)
-Structure | 2-hour lecture (Mon 10-12) and 3-hour lab (Sun 8-11, Tue 10-1, 1-4, Wed 1-4, Thu 11-2)
-TAs | Aya Nageh and Osama Ghandour
-Grades | (final), (midterm and quizzes), (lab)
-Lab Policy| Assignments and quizzes
-Book | "_Practical MLOps: Operationalizing Machine Learning Models_", Noah Gift and Alfredo Deza, 2021
-Supplementary Book | "_Reliable Machine Learning: Applying SRE Principles to ML in Production_", Cathy Chen, Niall Richard Murphy, Kranti Parisa, D. Sculley, and Todd Underwood, 2022
-Other Resourse | [Indian Institute of Technology Course](https://study.iitm.ac.in/ds/course_pages/BSDA5014.html)
-Objective | Streamlining ML workflows through automation, including data management, model training, continuous integration/delivery, and monitoring to ensure reliability and efficiency. Students learn to build scalable pipelines using tools like MLflow, Docker, and cloud platforms, with focusing on reproducibility and real-world adaptability.
-Prerequitstis | Machine Learning, Deep Learning, PyTorch
+| Course             | MLOps - DSAI 406                                                                                                                                                                                                                                                                                                                              |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Webpage            | [https://github.com/m-fakhry/DSAI-406-MLOps](https://github.com/m-fakhry/DSAI-406-MLOps)                                                                                                                                                                                                                                                      |
+| Structure          | 2-hour lecture (Mon 10-12) and 3-hour lab (Sun 8-11, Tue 10-1, 1-4, Wed 1-4, Thu 11-2)                                                                                                                                                                                                                                                        |
+| TAs                | Aya Nageh and Osama Ghandour                                                                                                                                                                                                                                                                                                                  |
+| Grades             | (final), (midterm and quizzes), (lab)                                                                                                                                                                                                                                                                                                         |
+| Lab Policy         | Assignments and quizzes                                                                                                                                                                                                                                                                                                                       |
+| Book               | "_Practical MLOps: Operationalizing Machine Learning Models_", Noah Gift and Alfredo Deza, 2021                                                                                                                                                                                                                                               |
+| Supplementary Book | "_Reliable Machine Learning: Applying SRE Principles to ML in Production_", Cathy Chen, Niall Richard Murphy, Kranti Parisa, D. Sculley, and Todd Underwood, 2022                                                                                                                                                                             |
+| Other Resourse     | [Indian Institute of Technology Course](https://study.iitm.ac.in/ds/course_pages/BSDA5014.html)                                                                                                                                                                                                                                               |
+| Objective          | Streamlining ML workflows through automation, including data management, model training, continuous integration/delivery, and monitoring to ensure reliability and efficiency. Students learn to build scalable pipelines using tools like MLflow, Docker, and cloud platforms, with focusing on reproducibility and real-world adaptability. |
+| Prerequitstis      | Machine Learning, Deep Learning, PyTorch                                                                                                                                                                                                                                                                                                      |
 
 ---
 ### Topics
@@ -42,10 +42,17 @@ Prerequitstis | Machine Learning, Deep Learning, PyTorch
 Week| Date |Topic | Contents | Lecture | Assignment
 ---|---|---|---|---|---
 1| 02-09 | | | | 
+<<<<<<< Updated upstream
 2| 02-16 | Introduction | Model development, DevOps, DataOps, MLOps | [Lecture 1](lectures/lec1.md) | [Assignment 1](assignments/assign1.md)
 3| 02-23 | Reproducibility | Conda, Git, Docker | [Lecture 2](lectures/lec2.md) | [Assignment 2](assignments/assign2.md)
 4| 03-02 | Tracking | MLflow, tracking API, experiments, runs, metrics, artifacts  | [Lecture 3](lectures/lec3.md) | [Assignment 3](assignments/assign3.md)
 5| 03-09 | CI/CD | Continuous integration and delivery, github actions, anatomy of a workflow yaml file, dependencies | [Lecture 4](lectures/lec4.md) | [Assignment 4](assignments/assign4.md)
+=======
+2| 02-16 | Introduction | Model development, DevOps, DataOps, MLOps | [Lecture 1](lec1.md) | [Assignment 1](assign1.md)
+3| 02-23 | Reproducibility | Conda, Git, Docker | [Lecture 2](lec2.md) | [Assignment 2](assign2.md)
+4| 03-02 | Tracking | MLflow, tracking API, experiments, runs, metrics, artifacts  | [Lecture 3](lec3.md) | [Assignment 3](assign3.md)
+5| 03-09 | | | | 
+>>>>>>> Stashed changes
 6| 03-16 | | | | 
 7| 03-23 | Eid | | | 
 8| 03-30 | Midterm? | | | 
