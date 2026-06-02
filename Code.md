@@ -1,7 +1,5 @@
 
 
-
-
 ```yaml
 
 name: ML CI-CD Pipeline

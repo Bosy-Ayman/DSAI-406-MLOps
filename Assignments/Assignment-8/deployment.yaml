@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: personacanvas-frontend
+  labels:
+    app: streamlit-web
+    tier: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: streamlit-web
+  template:
+    metadata:
+      labels:
+        app: streamlit-web
+    spec:
+      containers:
+      - name: streamlit-container
+        image: almond/streamlit-k8s-demo:latest # Mock/Standard streamlit image
+        ports:
+        - containerPort: 8501
+        resources:
+          requests:
+            cpu: "250m"
+            memory: "256Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"

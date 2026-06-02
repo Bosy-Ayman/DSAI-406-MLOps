@@ -1,0 +1,76 @@
+name: ML CI-CD Pipeline (Solved & Corrected)
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  lint:
+    name: Lint Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install Linting Tools
+        run: pip install flake8
+
+      - name: Run Linter
+        run: flake8 src/ # Fixed command syntax (was flake src/)
+
+  train:
+    name: Train Model
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt # Fixed "runs" keyword and file name (was requirement.txt)
+
+      - name: Train Model
+        run: python train.py
+
+      - name: Save Model to Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: model
+          path: model.pkl
+
+  deploy:
+    name: Deploy to Registry
+    needs: train
+    runs-on: ubuntu-latest
+    if: success() && github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: model # Fixed single-line parameter block
+
+      - name: Build Docker Image
+        run: docker build -t myapp:latest . # Fixed extra 'docker' word in run command
+
+      - name: Login to Docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Tag Docker Image
+        run: docker tag myapp:latest myrepo/myapp:latest # Fixed repository tag mismatch (was myrepo/app:latest)
+
+      - name: Push Docker Image
+        run: docker push myrepo/myapp:latest
