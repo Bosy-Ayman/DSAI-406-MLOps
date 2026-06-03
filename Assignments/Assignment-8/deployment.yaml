@@ -18,6 +18,7 @@ spec:
       containers:
       - name: streamlit-container
         image: almond/streamlit-k8s-demo:latest # Mock/Standard streamlit image
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8501
         resources:
