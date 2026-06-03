@@ -18,15 +18,16 @@ spec:
       containers:
       - name: generator-core
         image: almond/stylegan-inference:latest # Mock/Standard backend inference image
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
         resources:
           requests:
-            cpu: "2000m"
-            memory: "4Gi"
+            cpu: "200m"
+            memory: "512Mi"
             # If your minikube has GPU, uncomment below lines
             # nvidia.com/gpu: 1
           limits:
-            cpu: "4000m"
-            memory: "8Gi"
+            cpu: "1000m"
+            memory: "1Gi"
             # nvidia.com/gpu: 1
