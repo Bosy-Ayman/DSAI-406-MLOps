@@ -1440,6 +1440,7 @@ jobs:
 ---
 
 ### Assignment 7: 3-Job DAG Pipeline (Audit → Build → Promote)
+![[Pasted image 20260603020637.png]]
 
 **Objective:** Build a "High-Integrity Promotion Pipeline" for a medical AI company with three stages.
 

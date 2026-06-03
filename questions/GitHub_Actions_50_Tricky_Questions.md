@@ -81,7 +81,7 @@ jobs:
 ```
 What is the outcome of the `deploy` job?
 - (a) Success: Job 2 runs on the same VM, so `model.pt` is readily available.
-- (b) Failure: Job 2 runs on a freshly provisioned, separate VM with an empty workspace. `model.pt` does not exist.
+- ==(b) Failure: Job 2 runs on a freshly provisioned, separate VM with an empty workspace. `model.pt` does not exist.==
 - (c) Success: GHA automatically syncs the workspace directory across all jobs.
 - (d) Failure: Job 2 cannot run because it does not contain the `actions/checkout@v4` step first, which is syntactically required for every single job.
 
@@ -95,7 +95,7 @@ An engineer wants to install a custom library using `sudo apt-get` in a runner s
 #### Q4. Modifying the System Path
 You are installing a specific version of CUDA in your CI pipeline to test model latency. You download it to `/opt/cuda/bin`. How do you make sure that all subsequent steps in the same job can execute `nvcc` directly without typing the full path?
 - (a) `- run: export PATH="/opt/cuda/bin:$PATH"`
-- (b) `- run: echo "/opt/cuda/bin" >> $GITHUB_PATH`
+- ==(b) `- run: echo "/opt/cuda/bin" >> $GITHUB_PATH`==
 - (c) `- run: echo "PATH=/opt/cuda/bin" >> $GITHUB_ENV`
 - (d) `- run: set-env -name PATH -value /opt/cuda/bin`
 
@@ -103,7 +103,7 @@ You are installing a specific version of CUDA in your CI pipeline to test model 
 A PyTorch model training script gets stuck in an infinite loop due to a dataloader deadlock. You did not specify a `timeout-minutes` value in your workflow. What is the default time limit before GitHub terminates this stuck runner?
 - (a) 60 minutes (1 hour)
 - (b) 120 minutes (2 hours)
-- (c) 360 minutes (6 hours)
+- ==(c) 360 minutes (6 hours)==
 - (d) 1440 minutes (24 hours)
 
 #### Q6. The Windows Shell Default Gotcha
@@ -114,7 +114,7 @@ You set up a workflow that runs on a matrix of operating systems: `[ubuntu-lates
 ```
 What happens when this step executes on `windows-latest`?
 - (a) It succeeds because GHA translates standard bash commands to PowerShell equivalents on Windows.
-- (b) It fails because the default shell on Windows runners is PowerShell Core (`pwsh`), which does not natively support `rm -rf` without threw errors or syntax differences (like empty params).
+- ==(b) It fails because the default shell on Windows runners is PowerShell Core (`pwsh`), which does not natively support `rm -rf` without threw errors or syntax differences (like empty params).==
 - (c) It succeeds because Windows runners use Git Bash as their default shell.
 - (d) It fails because Windows does not support directories ending in a trailing slash in shell scripts.
 
@@ -237,7 +237,7 @@ A developer wants to check out the codebase and print a message in a single step
 ```
 What is the result when this workflow is parsed?
 - (a) The code is checked out, and "Workspace ready!" is printed to the logs.
-- (b) The step executes, but only the `uses` block runs; the `run` block is ignored.
+- ==(b) The step executes, but only the `uses` block runs; the `run` block is ignored.==
 - (c) The workflow fails with a YAML parser syntax error: a step cannot contain both `uses` and `run` keys.
 - (d) The runner executes the checkout and passes `echo "Workspace ready!"` as an input parameter to the action.
 
@@ -260,7 +260,7 @@ jobs:
 What happens to `job_b` and `job_c`?
 - (a) `job_b` and `job_c` are both marked as "Skipped" because `job_a` failed.
 - (b) `job_b` runs and succeeds in parallel with `job_a`. `job_c` is skipped because one of its prerequisites (`job_a`) failed.
-- (c) `job_b` runs and succeeds. `job_c` runs because `job_b` succeeded, ignoring the failure of `job_a`.
+- ==(c) `job_b` runs and succeeds. `job_c` runs because `job_b` succeeded, ignoring the failure of `job_a`.==
 - (d) The workflow crashes immediately before running any jobs because `job_a` has no `steps` key (only `run` at the job level).
 
 #### Q18. Matrix Fail-Fast Dynamics
@@ -297,7 +297,7 @@ job_b:
 When Job B runs, it prints `The model accuracy is ` (empty). Why?
 - (a) You must write to `$GITHUB_ENV` instead of `$GITHUB_OUTPUT` to cross job boundaries.
 - (b) Job B did not download the artifacts from Job A.
-- (c) Job A did not declare the output at the **job level** mapping to the step output.
+- ==(c) Job A did not declare the output at the **job level** mapping to the step output.==
 - (d) The syntax inside Job B must be `${{ steps.calc.outputs.ACCURACY }}`.
 
 #### Q20. Matrix Include Override Behavior
@@ -315,7 +315,7 @@ strategy:
 How many total jobs are spawned, and how many of them have the `gpu` variable set to `true`?
 - (a) 5 jobs spawned; only 1 has `gpu: true`.
 - (b) 4 jobs spawned; 2 have `gpu: true`.
-- (c) 4 jobs spawned; only 1 has `gpu: true` (specifically the one matching `ubuntu-latest` and `3.10`).
+- ==(c) 4 jobs spawned; only 1 has `gpu: true` (specifically the one matching `ubuntu-latest` and `3.10`).==
 - (d) 5 jobs spawned; 2 have `gpu: true`.
 
 #### Q21. The Expression Formatting Trap
@@ -329,7 +329,7 @@ What is the result when GHA processes this step?
 - (a) It throws a syntax error because `${{ }}` is forbidden in the `if:` key.
 - (b) It executes perfectly; GHA parses the expression and proceeds.
 - (c) It runs the step on EVERY branch because the `${{ }}` syntax evaluates to a string literal which is always truthy.
-- (d) It executes only on main, but displays a warning in the runner logs recommending the removal of the outer `${{ }}` brackets.
+- ==(d) It executes only on main, but displays a warning in the runner logs recommending the removal of the outer `${{ }}` brackets.==
 
 #### Q22. The Double Quotes JSON Parsing Error
 You have a step that dynamically writes JSON data containing environment variables:
@@ -338,7 +338,7 @@ You have a step that dynamically writes JSON data containing environment variabl
 ```
 If the commit message or property evaluated contains double quotes, what happens?
 - (a) GHA automatically escapes any special characters inside `${{ ... }}` expressions.
-- (b) GHA crashes before starting because expressions are evaluated literally, and raw double quotes in the expanded string will break the shell command syntax.
+- ==(b) GHA crashes before starting because expressions are evaluated literally, and raw double quotes in the expanded string will break the shell command syntax.==
 - (c) The shell automatically fixes the quotes using bash translation rules.
 - (d) It writes to the file successfully, but masks the whole file as a secret.
 
@@ -353,7 +353,7 @@ strategy:
       - os: macos-latest
 ```
 What is the effect of this `exclude` statement?
-- (a) It excludes all `macos-latest` runs entirely (spawning 4 total jobs instead of 6).
+- ==(a) It excludes all `macos-latest` runs entirely (spawning 4 total jobs instead of 6).==
 - (b) It throws an invalid syntax error because `exclude` requires specifying the `version` key as well.
 - (c) It excludes only the `macos-latest` with `version: 1` job.
 - (d) It runs all 6 jobs because the exclude filter is incomplete.
@@ -371,7 +371,7 @@ In GHA, every step has an implicit condition that it only runs if the job is suc
 ```
 If the workflow run is **cancelled** by a developer manual intervention, does this cleanup step run?
 - (a) Yes, because `failure()` covers cancellations as well.
-- (b) No, it does not run. Only `always()` or `cancelled()` runs on manual cancellations.
+- ==(b) No, it does not run. Only `always()` or `cancelled()` runs on manual cancellations.==
 - (c) Yes, because cancellation is classified as a job-level failure.
 - (d) No, because step cleanup scripts are automatically blocked on cancellations.
 
@@ -384,7 +384,7 @@ An engineer wants a step to run only if a custom environment variable `RUN_TESTS
 ```
 If the previous linting step in this job **failed**, does this integration test step run?
 - (a) Yes, because the custom `if:` condition overrides the default GHA "Stop on Failure" safety check, making the step status-blind.
-- (b) No, because custom `if:` conditions that do not contain explicit status functions (like `always()` or `failure()`) automatically inherit the implicit `success()` check under the hood.
+- ==(b) No, because custom `if:` conditions that do not contain explicit status functions (like `always()` or `failure()`) automatically inherit the implicit `success()` check under the hood.==
 - (c) Yes, because environment checks are evaluated at the runner level, bypassing job status.
 - (d) No, because environment variables cannot be accessed within `if:` blocks.
 
@@ -398,7 +398,7 @@ You configure a step to continue running the rest of the job even if this specif
 The step fails during run. What are the values of `steps.test-step.outcome` and `steps.test-step.conclusion`?
 - (a) `outcome: failure`, `conclusion: failure`
 - (b) `outcome: success`, `conclusion: success`
-- (c) `outcome: failure`, `conclusion: success`
+- ==(c) `outcome: failure`, `conclusion: success`==
 - (d) `outcome: success`, `conclusion: failure`
 
 #### Q27. Always() vs Cancelled() Hierarchy
@@ -412,7 +412,7 @@ If a workflow job times out (e.g. hits the 6-hour limit), which of the following
   if: cancelled()
   run: echo "Cancelled!"
 ```
-- (a) Both Step 1 and Step 2 will execute.
+- ==(a) Both Step 1 and Step 2 will execute.==
 - (b) Only Step 1 will execute.
 - (c) Only Step 2 will execute.
 - (d) Neither step will execute because the virtual machine is instantly destroyed upon timeout.
@@ -424,13 +424,13 @@ You want a step to run only when:
 What is the correct syntax?
 - (a) `if: github.event_name == 'push' && github.ref == 'refs/heads/main'`
 - (b) `if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'`
-- (c) Both (a) and (b) are functionally identical and correct.
+- ==(c) Both (a) and (b) are functionally identical and correct.==
 - (d) Neither; status checks cannot be combined with context variables in the same `if` block.
 
 #### Q29. The Masked Status Context
 What is the behavior of the `success()` function when placed inside a job-level `if` conditional, compared to a step-level `if` conditional?
 - (a) It behaves identically in both locations.
-- (b) At the job level, `success()` checks the status of all **upstream parent jobs** listed in the `needs` key; at the step level, it checks the status of **previous steps** within that same job.
+- ==(b) At the job level, `success()` checks the status of all **upstream parent jobs** listed in the `needs` key; at the step level, it checks the status of **previous steps** within that same job.==
 - (c) It is invalid syntax at the job level and will fail validation.
 - (d) At the job level, it checks if the workflow trigger was successful.
 
@@ -442,7 +442,7 @@ If you have a workflow step like this:
 ```
 Under what circumstances does this step run?
 - (a) It runs only if the training step completed and succeeded.
-- (b) It runs regardless of previous steps' success/failure status, as long as the train step emitted the specific output.
+- ==(b) It runs regardless of previous steps' success/failure status, as long as the train step emitted the specific output.==
 - (c) It fails parsing because you cannot combine `always()` with step outputs.
 - (d) It runs only if the training step failed but emitted the output.
 
@@ -457,7 +457,7 @@ You store your production database password in GHA Secrets. The password is `pro
 ```
 What is printed in the job logs?
 - (a) `Welcome to the production deployment server!`
-- (b) `Welcome to the ***uction deployment server!`
+- ==(b) `Welcome to the ***uction deployment server!`==
 - (c) `Welcome to the *** deployment server!`
 - (d) `***` (The entire line is masked)
 
@@ -468,7 +468,7 @@ You pass a database API secret to a Python script via command-line arguments:
 ```
 How does this impact security on the runner?
 - (a) Highly secure: GitHub logs will mask it, ensuring complete protection.
-- (b) Insecure: Any process running on the same VM (e.g. compromised third-party actions) can read the secret by inspecting the process command lines (e.g. running `ps aux`). Environment variables should be used instead.
+- ==(b) Insecure: Any process running on the same VM (e.g. compromised third-party actions) can read the secret by inspecting the process command lines (e.g. running `ps aux`). Environment variables should be used instead.==
 - (c) Syntax error: GHA does not allow placing secret expressions inside a `run:` string.
 - (d) Secure: GHA virtualizes each step in a sandboxed process group that hides command-line arguments from other processes.
 
@@ -481,7 +481,7 @@ An engineer suspects that a third-party action is malicious and wants to verify 
 ```
 What is printed in the logs?
 - (a) `***`
-- (b) The plain-text base64 encoded string of the secret, completely unmasked.
+- ==(b) The plain-text base64 encoded string of the secret, completely unmasked.==
 - (c) A GHA security violation error, blockading the log write.
 - (d) The string `***` encoded in base64.
 
@@ -489,13 +489,13 @@ What is printed in the logs?
 If you do not explicitly define a `permissions:` block in your workflow YAML, what are the default permissions of the automatic `GITHUB_TOKEN` provided to your runner?
 - (a) Read-only access across all scopes.
 - (b) Read/Write access across all scopes.
-- (c) It depends on the repository or organization settings, which might default to Read/Write (insecure) or Read-only (secure).
+- ==(c) It depends on the repository or organization settings, which might default to Read/Write (insecure) or Read-only (secure).==
 - (d) Admin access to all repository operations.
 
 #### Q35. The Pull Request Target Danger
 What is the major security risk associated with triggering a workflow on `pull_request_target` instead of `pull_request`?
 - (a) Workflows run 50% slower.
-- (b) `pull_request_target` runs in the context of the base repository (having write access and secrets). If you check out the untrusted fork code (`github.event.pull_request.head.sha`) and run scripts from it, the fork contributor can steal your secrets or write to your repository.
+- ==(b) `pull_request_target` runs in the context of the base repository (having write access and secrets). If you check out the untrusted fork code (`github.event.pull_request.head.sha`) and run scripts from it, the fork contributor can steal your secrets or write to your repository.==
 - (c) `pull_request_target` runs without a runner VM, forcing local command compilation.
 - (d) Fork PRs are blocked from building Docker containers on `pull_request_target`.
 
@@ -507,7 +507,7 @@ You download a secret to a configuration file:
 ```
 Does GHA mask the output of the second step (`cat config.json`)?
 - (a) No, GHA only masks secrets when they are explicitly referenced inside `${{ }}` in the same step.
-- (b) Yes, GHA scans all stdout and stderr streams dynamically and will mask any string match of your configured secrets, regardless of how they are printed.
+- ==(b) Yes, GHA scans all stdout and stderr streams dynamically and will mask any string match of your configured secrets, regardless of how they are printed.==
 - (c) No, because GHA does not scan file read streams.
 - (d) Yes, but only if the file name ends in `.txt` or `.log`.
 
@@ -523,7 +523,7 @@ jobs:
 ```
 Which secret is printed (masked)?
 - (a) The Repository-level secret, because repository scope overrides environment scope.
-- (b) The Environment-specific secret, because environment-level secrets override repository-level secrets of the same name.
+- ==(b) The Environment-specific secret, because environment-level secrets override repository-level secrets of the same name.==
 - (c) Both values are concatenated.
 - (d) The step throws a variable naming conflict error.
 
@@ -551,14 +551,14 @@ You set up a Cache Action for Python packages:
 ```
 You push a commit that modifies `requirements.txt` by adding `pandas`. What happens during the workflow run?
 - (a) Cache hit: GHA restores the old cache and ignores `pandas` to save time.
-- (b) Cache miss: `hashFiles` evaluates to a new value. GHA does not find the key, falls back to the restore key (restoring the old cache), runs `pip install` which quickly updates it with `pandas`, and saves a new cache under the new key at the end of the job.
+- ==(b) Cache miss: `hashFiles` evaluates to a new value. GHA does not find the key, falls back to the restore key (restoring the old cache), runs `pip install` which quickly updates it with `pandas`, and saves a new cache under the new key at the end of the job.==
 - (c) Syntax error: GHA does not allow multi-line strings in `restore-keys`.
 - (d) Cache miss: The old cache is deleted completely, and all packages are re-downloaded from scratch.
 
 #### Q40. Cache Size Limits in MLOps
 You are caching trained model weights (approx. 14GB) using `actions/cache` to speed up deployment testing. What is the total storage limit for caches per repository, and what happens when you exceed it?
 - (a) Limit is 2GB; GHA aborts the workflow run with a storage quota error.
-- (b) Limit is 10GB; GHA will evict older caches using a Least Recently Used (LRU) policy until the total fits within the limit.
+- ==(b) Limit is 10GB; GHA will evict older caches using a Least Recently Used (LRU) policy until the total fits within the limit.==
 - (c) Limit is 50GB; GHA bills your account for the extra storage.
 - (d) There is no cache size limit for public repositories.
 
@@ -569,14 +569,14 @@ Your MLOps workflow has a step that calculates the code version dynamically usin
 ```
 The versioning script fails to find any parent tags or history. Why?
 - (a) GHA runs checkout in a detached HEAD state where tags are deleted.
-- (b) `actions/checkout` defaults to `fetch-depth: 1`, which only fetches the single latest commit (shallow clone), discarding git history and tags.
+- ==(b) `actions/checkout` defaults to `fetch-depth: 1`, which only fetches the single latest commit (shallow clone), discarding git history and tags.==
 - (c) The runner VM doesn't have Git installed.
 - (d) GHA blockades all read-only git operations inside workflow VMs.
 
 #### Q42. Caching vs Artifacts Lifetime
 What is the fundamental functional difference between `actions/cache` and `actions/upload-artifact` in GHA?
 - (a) Caches are used to pass data between jobs; Artifacts are used to save files.
-- (b) Caches are preserved across different workflow runs to speed up dependencies; Artifacts are associated with a specific workflow run and are designed for downloading build/model outputs.
+- ==(b) Caches are preserved across different workflow runs to speed up dependencies; Artifacts are associated with a specific workflow run and are designed for downloading build/model outputs.==
 - (c) Caches are private, whereas Artifacts are public.
 - (d) Caches are stored in the repo; Artifacts are stored in S3.
 
@@ -584,7 +584,7 @@ What is the fundamental functional difference between `actions/cache` and `actio
 You upload your training plots and model binaries as artifacts. What is the default retention period for these artifacts before GHA automatically purges them?
 - (a) 14 days
 - (b) 30 days
-- (c) 90 days
+- ==(c) 90 days==
 - (d) 365 days
 
 #### Q44. Submodule Checkout Trap
@@ -593,7 +593,7 @@ Your MLOps repository depends on a submodule named `data-utils` which holds your
 - uses: actions/checkout@v4
 ```
 When you run `python preprocess.py`, it fails with `ModuleNotFoundError: No module named 'data_utils'`. Why?
-- (a) `actions/checkout` does not check out submodules by default. You must pass `submodules: true` or `submodules: recursive` in the input configuration.
+- ==(a) `actions/checkout` does not check out submodules by default. You must pass `submodules: true` or `submodules: recursive` in the input configuration.==
 - (b) Submodules are not supported on standard GHA runner architectures.
 - (c) You must run `git pull submodules` manually in a separate step.
 - (d) GHA requires submodules to be checked out inside a separate job.
@@ -611,7 +611,7 @@ Identify the syntax or parser error in this multiline script block:
   pytest tests/smoke_test.py
 ```
 - (a) The pipe character `|` is invalid on Windows systems.
-- (b) The shell commands are not indented relative to the `run:` key, which breaks YAML formatting rules.
+- ==(b) The shell commands are not indented relative to the `run:` key, which breaks YAML formatting rules.==
 - (c) Python inline execution `-c` must be written in a single-line step.
 - (d) Double quotes are forbidden inside a multiline script block.
 
@@ -630,7 +630,7 @@ jobs:
         run: pytest tests/
 ```
 - (a) `setup-python` requires a custom compiler path.
-- (b) You forgot the `actions/checkout@v4` step. The runner VM workspace is completely empty; there are no files or `tests/` directory to run.
+- ==(b) You forgot the `actions/checkout@v4` step. The runner VM workspace is completely empty; there are no files or `tests/` directory to run.==
 - (c) `pytest` is not supported on `ubuntu-latest`.
 - (d) The Python version must be enclosed in double quotes without single quotes.
 
@@ -648,7 +648,7 @@ jobs:
 ```
 What is printed in the logs, and why?
 - (a) `Deploying to dev`
-- (b) It crashes with a GHA parser error: `STAGE` is not defined in the `github` context. To access environment variables via expression syntax, you must write `${{ env.STAGE }}`.
+- ==(b) It crashes with a GHA parser error: `STAGE` is not defined in the `github` context. To access environment variables via expression syntax, you must write `${{ env.STAGE }}`.==
 - (c) `Deploying to ` (empty string) because shell variables cannot be accessed via expression syntax.
 - (d) It executes, but prompts a warning recommending using `$STAGE` directly.
 
@@ -679,7 +679,7 @@ A student writes this deployment step:
 ```
 What is the result when parsing this workflow?
 - (a) Perfect execution: the secret is expanded correctly.
-- (b) It fails validation because the expression syntax must have **double** curly braces wrapped in a string with a dollar prefix: `${{ secrets.DOCKER_PASSWORD }}`.
+- ==(b) It fails validation because the expression syntax must have **double** curly braces wrapped in a string with a dollar prefix: `${{ secrets.DOCKER_PASSWORD }}`.==
 - (c) The step runs but passes the literal string `{{ secrets.DOCKER_PASSWORD }}` as the password, leaking nothing but failing the login.
 - (d) The secret is successfully passed but it throws a warning.
 
@@ -691,7 +691,7 @@ You checkout your codebase and try to run a custom build script that is in your 
 ```
 The step fails instantly with `Permission denied (error 13)` on `ubuntu-latest`. Why?
 - (a) The script requires `sudo` privileges.
-- (b) The file `build.sh` does not have executable permissions (+x) inside the Git tree. You must run `chmod +x ./scripts/build.sh` before running it, or invoke it via `bash ./scripts/build.sh`.
+- ==(b) The file `build.sh` does not have executable permissions (+x) inside the Git tree. You must run `chmod +x ./scripts/build.sh` before running it, or invoke it via `bash ./scripts/build.sh`.==
 - (c) GHA runners block custom shell scripts for security reasons.
 - (d) You cannot execute scripts outside the root workspace directory.
 

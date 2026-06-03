@@ -24,31 +24,31 @@
 
 **Q1.** What is MLOps primarily about?
 - (a) Building the most accurate ML model possible
-- (b) Automation of ML workflows and shipping models to production
+- ==(b) Automation of ML workflows and shipping models to production==
 - (c) Replacing DevOps with ML-specific tools
 - (d) Data collection and labeling only
 
 **Q2.** According to the "Hidden Technical Debt in ML Systems" paper (NeurIPS 2015), the ML code in a real-world ML system is:
 - (a) The largest component
 - (b) About half of the system
-- (c) Only a small fraction of the entire system
+- ==(c) Only a small fraction of the entire system==
 - (d) Not necessary once the model is trained
 
 **Q3.** Which of the following is a **DataOps** task?
 - (a) Deploying a binary/service
-- (b) Data Versioning using DVC
+- ==(b) Data Versioning using DVC==
 - (c) Unit and integration tests
 - (d) Model Registry management
 
 **Q4.** What distinguishes MLOps from DevOps?
 - (a) MLOps doesn't require version control
-- (b) MLOps adds data versioning, model registry, and data drift monitoring
+- ==(b) MLOps adds data versioning, model registry, and data drift monitoring==
 - (c) MLOps only focuses on deployment
 - (d) DevOps is a subset of MLOps
 
 **Q5.** Models in production can decay due to:
 - (a) Code refactoring
-- (b) Data drift
+- ==(b) Data drift==
 - (c) Better hardware
 - (d) Faster internet
 
@@ -58,32 +58,32 @@
 
 **Q6.** Why should you never use your "Base" Python environment for an ML project?
 - (a) It's slower than virtual environments
-- (b) You lose the ability to reproduce your work when projects need different dependency versions
+- ==(b) You lose the ability to reproduce your work when projects need different dependency versions==
 - (c) Base environments can't install ML libraries
 - (d) It violates Docker requirements
 
 **Q7.** Which command exports a Conda environment to a YAML file?
 - (a) `conda env export > requirements.txt`
-- (b) `conda env export --no-builds > environment.yml`
+- ==(b) `conda env export --no-builds > environment.yml`==
 - (c) `pip freeze > environment.yml`
 - (d) `conda save --env > environment.yml`
 
 **Q8.** In a Dockerfile, what does `RUN` do?
 - (a) Executes a command when the container starts
-- (b) Executes a command at **build time** to create a new image layer
+- ==(b) Executes a command at **build time** to create a new image layer==
 - (c) Defines the entry point of the container
 - (d) Copies files from host to container
 
 **Q9.** Why should you copy `requirements.txt` BEFORE copying the rest of the code in a Dockerfile?
 - (a) It's a Docker syntax requirement
-- (b) To leverage **layer caching** — if code changes but dependencies don't, pip install is cached
+- ==(b) To leverage **layer caching** — if code changes but dependencies don't, pip install is cached==
 - (c) To make the image smaller
 - (d) To avoid permission errors
 
-**Q10.** Which Docker instruction runs at container **startup** time?
+==**Q10.**== Which Docker instruction runs at container **startup** time?
 - (a) `RUN`
 - (b) `COPY`
-- (c) `CMD`
+- ==(c) `CMD`==
 - (d) `FROM`
 
 ---
@@ -91,32 +91,32 @@
 ### Lecture 3 — MLflow
 
 **Q11.** Which are the **three pillars** of MLflow?
-- (a) Tracking, Models, Registry
+- ==(a) Tracking, Models, Registry==
 - (b) Training, Testing, Deployment
 - (c) Data, Code, Infrastructure
 - (d) Logging, Monitoring, Alerting
 
 **Q12.** What MLflow API call wraps an experiment run?
 - (a) `mlflow.create_run()`
-- (b) `mlflow.start_run()`
+- ==(b) `mlflow.start_run()`==
 - (c) `mlflow.init_experiment()`
 - (d) `mlflow.begin()`
 
 **Q13.** What is an MLflow **Artifact**?
 - (a) A metric logged during training
-- (b) Any file produced by your code that is stored with a specific run
+- ==(b) Any file produced by your code that is stored with a specific run==
 - (c) A Git commit hash
 - (d) A Docker image
 
 **Q14.** How does MLflow support collaboration?
 - (a) Via email notifications
-- (b) Through a **Client-Server** architecture with a shared tracking server
+- ==(b) Through a **Client-Server** architecture with a shared tracking server==
 - (c) By pushing to GitHub
 - (d) Through Slack integration
 
 **Q15.** What does `mlflow.pytorch.log_model(model, name="model")` do?
 - (a) Saves the model to the local disk only
-- (b) Logs the model artifact with its environment details to MLflow
+- ==(b) Logs the model artifact with its environment details to MLflow==
 - (c) Uploads the model to Docker Hub
 - (d) Registers the model for production deployment
 
@@ -126,31 +126,31 @@
 
 **Q16.** What is Continuous Integration (CI)?
 - (a) Manually deploying code to production
-- (b) Every `git push` triggers automated build and test
+- ==(b) Every `git push` triggers automated build and test==
 - (c) Running code only on the main branch
 - (d) Continuous monitoring of deployed models
 
 **Q17.** In a GitHub Actions YAML file, the `on:` key specifies:
 - (a) The operating system for the runner
-- (b) The event(s) that trigger the workflow
+- ==(b) The event(s) that trigger the workflow==
 - (c) The list of steps to execute
 - (d) The environment variables
 
-**Q18.** Where must a GitHub Actions workflow YAML file be stored?
+==**Q18.**== Where must a GitHub Actions workflow YAML file be stored?
 - (a) In the repository root
-- (b) In `.github/workflows/`
+- ==(b) In `.github/workflows/`==
 - (c) In `/actions/`
 - (d) Anywhere in the repository
 
 **Q19.** In GitHub Actions, the `needs:` keyword is used to:
 - (a) Install dependencies
-- (b) Define job **dependencies** (run after another job completes)
+- ==(b) Define job **dependencies** (run after another job completes)==
 - (c) Specify required secrets
 - (d) List required artifacts
 
 **Q20.** Which trigger should you use for your **Testing** YAML?
 - (a) `push: branches: [main]`
-- (b) `pull_request: branches: [main]`
+- ==(b) `pull_request: branches: [main]`==
 - (c) `workflow_dispatch`
 - (d) `schedule`
 
@@ -160,31 +160,31 @@
 
 **Q21.** What are the three levels of automated testing in MLOps?
 - (a) Syntax, Logic, Performance
-- (b) Unit Tests, Integration Tests, Validation Tests
+- ==(b) Unit Tests, Integration Tests, Validation Tests==
 - (c) Local, Staging, Production
 - (d) Code, Data, Model
 
 **Q22.** In the CI/CD pipeline, what does `get_best_model.py` do?
 - (a) Trains a new model
-- (b) Searches MLflow for the best model by accuracy and saves its URI
+- ==(b) Searches MLflow for the best model by accuracy and saves its URI==
 - (c) Downloads a model from Docker Hub
 - (d) Validates the model against test data
 
 **Q23.** Why does DVC exist?
 - (a) To replace Git for code versioning
-- (b) Because Git is broken for large binary data files — it stores full copies and can't track data lineage
+- ==(b) Because Git is broken for large binary data files — it stores full copies and can't track data lineage==
 - (c) To provide a graphical interface for Git
 - (d) To speed up model training
 
 **Q24.** What does a `.dvc` file contain?
 - (a) The actual data
 - (b) A compressed version of the data
-- (c) A **pointer** (MD5 hash, size, path) to the actual data stored elsewhere
+- ==(c) A **pointer** (MD5 hash, size, path) to the actual data stored elsewhere==
 - (d) Training logs
 
 **Q25.** What command does a teammate run to fetch the actual data tracked by DVC?
 - (a) `git pull`
-- (b) `dvc pull`
+- ==(b) `dvc pull`==
 - (c) `dvc fetch`
 - (d) `dvc download`
 
@@ -195,24 +195,24 @@
 **Q26.** In GitHub Actions, every step has a hidden default condition. What is it?
 - (a) `if: always()`
 - (b) `if: failure()`
-- (c) `if: success()`
+- ==(c) `if: success()`==
 - (d) `if: cancelled()`
 
 **Q27.** What happens when you add a custom `if:` condition to a step WITHOUT including `success()`?
 - (a) The step is skipped
-- (b) The default "Stop on Failure" safety is **disabled** — the step becomes "status blind"
+- ==(b) The default "Stop on Failure" safety is **disabled** — the step becomes "status blind"==
 - (c) The step runs twice
 - (d) GitHub throws an error
 
 **Q28.** How do you pass data between two **different Jobs** in GitHub Actions?
 - (a) Using shared environment variables
-- (b) Using `actions/upload-artifact` and `actions/download-artifact`
+- ==(b) Using `actions/upload-artifact` and `actions/download-artifact`==
 - (c) Using local file system
 - (d) Using Docker volumes
 
 **Q29.** What does `if: failure()` do in a step?
 - (a) Causes the step to always fail
-- (b) Runs the step **only if** a previous step in the same job failed
+- ==(b) Runs the step **only if** a previous step in the same job failed==
 - (c) Marks the step as optional
 - (d) Retries the failed step
 
@@ -226,7 +226,7 @@ steps:
     run: python train.py
 ```
 - (a) No issue
-- (b) Secrets must use `${{ secrets.MLFLOW_URI }}` syntax
+- ==(b) Secrets must use `${{ secrets.MLFLOW_URI }}` syntax==
 - (c) The env block is in the wrong location
 - (d) `echo` cannot write to files
 
@@ -236,49 +236,49 @@ steps:
 
 **Q31.** What is the **smallest deployable unit** in Kubernetes?
 - (a) Container
-- (b) Pod
+- ==(b) Pod==
 - (c) Node
 - (d) Service
 
 **Q32.** Why do we need **Services** in Kubernetes?
 - (a) To run containers
-- (b) Because Pods are ephemeral and get new IPs when restarted — Services provide stable addresses
+- ==(b) Because Pods are ephemeral and get new IPs when restarted — Services provide stable addresses==
 - (c) To store data
 - (d) To manage Docker images
 
 **Q33.** What does the **Scheduler** in the K8s Control Plane do?
 - (a) Stores the cluster state
 - (b) Validates API requests
-- (c) Matches Pods to the best available Node (based on CPU/GPU/RAM)
+- ==(c) Matches Pods to the best available Node (based on CPU/GPU/RAM)==
 - (d) Manages container images
 
 **Q34.** What is the valid range for a `nodePort` in a Kubernetes Service?
 - (a) 1-1024
 - (b) 8000-9000
-- (c) 30000-32767
+- ==(c) 30000-32767==
 - (d) Any port number
 
 **Q35.** What happens when a Pod exceeds its **memory limit** in K8s?
 - (a) K8s throttles the memory usage
-- (b) K8s **immediately kills** the process (OOM)
+- ==(b) K8s **immediately kills** the process (OOM)==
 - (c) K8s migrates the Pod to another Node
 - (d) Nothing — it's just a suggestion
 
 **Q36.** What happens when a Pod exceeds its **CPU limit** in K8s?
 - (a) K8s kills the Pod
-- (b) K8s **throttles** the CPU (slows down, but doesn't kill)
+- ==(b) K8s **throttles** the CPU (slows down, but doesn't kill)==
 - (c) K8s ignores it
 - (d) K8s restarts the Pod
 
 **Q37.** In a Deployment YAML, the `selector.matchLabels` must match:
 - (a) The deployment name
 - (b) The container image tag
-- (c) The Pod template's `labels`
+- ==(c) The Pod template's `labels`==
 - (d) The service port
 
 **Q38.** What does this command do: `kubectl scale deployment backend --replicas=10`?
 - (a) Creates 10 new deployments
-- (b) Scales the `backend` deployment to maintain 10 running Pod instances
+- (b==) Scales the `backend` deployment to maintain 10 running Pod instances==
 - (c) Limits the deployment to 10 nodes
 - (d) Sets the memory limit to 10GB
 
@@ -288,13 +288,13 @@ steps:
 
 **Q39.** Why is Kubeflow preferred over GHA for heavy AI workloads?
 - (a) Kubeflow is free, GHA is paid
-- (b) Kubeflow handles data locality, GPU scheduling, and step-level caching natively within the K8s cluster
+- ==(b) Kubeflow handles data locality, GPU scheduling, and step-level caching natively within the K8s cluster==
 - (c) Kubeflow replaces Kubernetes
 - (d) Kubeflow doesn't require Docker
 
 **Q40.** What is a "Silent Failure" in production ML?
 - (a) A system crash with no error logs
-- (b) Infrastructure looks healthy but the model serves degraded predictions
+- ==(b) Infrastructure looks healthy but the model serves degraded predictions==
 - (c) A Docker container that doesn't start
 - (d) A CI pipeline that times out
 
@@ -302,65 +302,65 @@ steps:
 
 ## Section B: True or False
 
-**Q41.** MLOps only applies to deep learning models. → **________**
+**Q41.** MLOps only applies to deep learning models. → **____false____**
 
-**Q42.** In Docker, `CMD` is executed at build time. → **________**
+**Q42.** In Docker, `CMD` is executed at build time. → **_____False___**
 
-**Q43.** `RUN` creates a new layer in the Docker image. → **________**
+==**Q43.**== `RUN` creates a new layer in the Docker image. → **____True____**
 
-**Q44.** In GitHub Actions, jobs run **sequentially** by default. → **________**
+**Q44.** In GitHub Actions, jobs run **sequentially** by default. → **____False____**  --> in parallel
 
-**Q45.** In GitHub Actions, jobs run **in parallel** by default. → **________**
+**Q45.** In GitHub Actions, jobs run **in parallel** by default. → **___True_____**
 
-**Q46.** Each Job in GHA runs on a **separate VM** with its own empty disk. → **________**
+**Q46.** Each Job in GHA runs on a **separate VM** with its own empty disk. → **____True____**
 
-**Q47.** Local variables set in one Step persist to the next Step in the same Job. → **________**
+==**Q47.**== Local variables set in one Step persist to the next Step in the same Job. → **__False______**
 
-**Q48.** DVC stores the actual data files inside the Git repository. → **________**
+**Q48.** DVC stores the actual data files inside the Git repository. → **______False__**
 
-**Q49.** MLflow Tracking logs code, data, config, and results in one place. → **________**
+**Q49.** MLflow Tracking logs code, data, config, and results in one place. → **___True_____**
 
-**Q50.** In Kubernetes, a Pod always has the same IP address throughout its lifecycle. → **________**
+**Q50.** In Kubernetes, a Pod always has the same IP address throughout its lifecycle. → **____False____**
 
-**Q51.** Kubernetes Services provide a stable/permanent IP address. → **________**
+**Q51.** Kubernetes Services provide a stable/permanent IP address. → **____True____**
 
-**Q52.** The `etcd` component in K8s stores the cluster's desired and current state. → **________**
+**Q52.** The `etcd` component in K8s stores the cluster's desired and current state. → **___True_____**
 
-**Q53.** In K8s, if you exceed the CPU limit, the Pod gets killed. → **________**
+**Q53.** In K8s, if you exceed the CPU limit, the Pod gets killed. → **____False____**
 
-**Q54.** In K8s, if you exceed the memory limit, the Pod gets killed. → **________**
+**Q54.** In K8s, if you exceed the memory limit, the Pod gets killed. → **____True____**
 
-**Q55.** Kubeflow provides step-level caching, meaning if Step 3 fails, Steps 1 and 2 don't need to re-run. → **________**
+**Q55.** Kubeflow provides step-level caching, meaning if Step 3 fails, Steps 1 and 2 don't need to re-run. → **___True_____**
 
-**Q56.** Data Drift means the relationship between input features and target labels changes over time. → **________**
+**Q56.** Data Drift means the relationship between input features and target labels changes over time. → **_False_______** -->concept drift
 
-**Q57.** Concept Drift means the input data distribution changes compared to training data. → **________**
+**Q57.** Concept Drift means the input data distribution changes compared to training data. → **___False_____**
 
-**Q58.** In Docker, copying `requirements.txt` first and then installing before copying the rest of the code is an optimization trick for layer caching. → **________**
+**Q58.** In Docker, copying `requirements.txt` first and then installing before copying the rest of the code is an optimization trick for layer caching. → **_True_______**
 
-**Q59.** `pip freeze > requirements.txt` exports the current environment to a file. → **________**
+**Q59.** `pip freeze > requirements.txt` exports the current environment to a file. → **____True____**
 
-**Q60.** In GitHub Actions, `${{ secrets.NAME }}` is the correct way to access secrets. → **________**
+**Q60.** In GitHub Actions, `${{ secrets.NAME }}` is the correct way to access secrets. → **____True____**
 
-**Q61.** A Kubernetes Deployment ensures the desired number of Pod replicas are always running. → **________**
+**Q61.** A Kubernetes Deployment ensures the desired number of Pod replicas are always running. → **____True____**
 
-**Q62.** `kubectl` is the imperative way to interact with Kubernetes. → **________**
+**Q62.** `kubectl` is the imperative way to interact with Kubernetes. → **_True_______**
 
-**Q63.** Kubeflow replaces GitHub Actions entirely. → **________**
+**Q63.** Kubeflow replaces GitHub Actions entirely. → **___False_____**
 
-**Q64.** The `branches-ignore` key in GHA triggers the workflow on all branches **except** the listed ones. → **________**
+**Q64.** The `branches-ignore` key in GHA triggers the workflow on all branches **except** the listed ones. → **___True_____**
 
-**Q65.** Minikube runs a multi-node production K8s cluster. → **________**
+==**Q65.**== Minikube runs a multi-node production K8s cluster. → **False_______**
 
-**Q66.** TensorBoard is used for real-time monitoring of the training process (loss curves, histograms). → **________**
+**Q66.** TensorBoard is used for real-time monitoring of the training process (loss curves, histograms). → **___True_____**
 
-**Q67.** Docker Compose orchestrates multiple containers with a single command. → **________**
+**Q67.** Docker Compose orchestrates multiple containers with a single command. → **____True____**
 
-**Q68.** In K8s, a Service with `type: NodePort` is accessible from outside the cluster. → **________**
+**Q68.** In K8s, a Service with `type: NodePort` is accessible from outside the cluster. → **True______**
 
-**Q69.** In a GitHub Actions YAML, the `always()` function ensures a step runs regardless of success or failure. → **________**
+**Q69.** In a GitHub Actions YAML, the `always()` function ensures a step runs regardless of success or failure. → **___True_____**
 
-**Q70.** DVC uses MD5 hashes to track data file versions. → **________**
+**Q70.** DVC uses MD5 hashes to track data file versions. → **___True_____**
 
 ---
 
@@ -435,6 +435,22 @@ jobs:
       - uses docker build ml-app:latest .
 ```
 
+**Answer**:
+
+```yaml
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+      - run: pip install -r requirements.txt
+      - name: Checkout Code
+      - name: Train
+        env:
+          MLFLOW_URI: ${{secrets.MLFLOW_URI}}
+        run: python train.py
+      - uses docker build ml-app:latest .
+```
+
 **Q97.** This Dockerfile is written the "slow way." Rewrite it for optimal layer caching:
 ```dockerfile
 FROM python:3.9
@@ -443,6 +459,18 @@ WORKDIR /app
 RUN pip install -r requirements.txt
 CMD ["python", "train.py"]
 ```
+
+**Answer**:
+
+```dockerfile
+FROM python:3.9
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+CMD ["python", "train.py"]
+```
+
 
 **Q98.** What is wrong with this pipeline? The `deploy` job tries to read `model_id.txt` created by `train`, but the file is not found:
 ```yaml
@@ -459,6 +487,27 @@ jobs:
       - run: cat model_id.txt
 ```
 
+**Answer**:
+
+```yaml
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+	    run: actions/download-artifact@v4
+      - run: echo "RUN_12345" > model_id.txt
+        path:
+	        with:
+	        
+
+  deploy:
+    needs: train
+    run: actions/upload-artifact@v4
+    runs-on: ubuntu-latest
+    steps:
+      - run: cat model_id.txt
+```
+
 **Q99.** This Dockerfile has a conceptual misunderstanding. What will happen?
 ```dockerfile
 FROM python:3.10-slim
@@ -467,7 +516,7 @@ RUN date > /app/build_time.txt
 CMD ["cat", "/app/build_time.txt"]
 ```
 Will the date shown be the build time or the run time? Explain.
-
+of the build time not the run time, run excute at build time and the file become a permanent layer. cmd only reads it at runtime.
 **Q100.** Find the issue with this conditional step:
 ```yaml
 steps:
@@ -479,6 +528,21 @@ steps:
 
   - name: publish
     if: github.ref == 'refs/heads/main'
+    run: ./publish.sh
+```
+
+**Answer:**
+
+```yaml
+steps:
+  - name: compile
+    run: make build
+
+  - name: test
+    run: pytest tests/
+
+  - name: publish
+    if: sucess() && github.ref == 'refs/heads/main'
     run: ./publish.sh
 ```
 
@@ -500,12 +564,41 @@ spec:
     app: web-frontend
 ```
 
+**Answer:**
+
+```yaml
+# deployment.yaml
+spec:
+  selector:
+    matchLabels:
+      app: web-frontend
+  template:
+    metadata:
+      labels:
+        app: web-frontend    # ← Is this correct?
+---
+# service.yaml
+spec:
+  selector:
+    app: web-frontend
+```
+
 **Q102.** What's wrong with this MLflow code?
 ```python
 mlflow.set_experiment("MyExperiment")
 mlflow.log_params({"lr": 0.01, "epochs": 10})
 mlflow.log_metric("accuracy", 0.95)
 mlflow.pytorch.log_model(model, name="model")
+```
+
+**Answer:**
+
+```python
+with mlflow.start_run():
+	mlflow.set_experiment("MyExperiment")
+	mlflow.log_params({"lr": 0.01, "epochs": 10})
+	mlflow.log_metric("accuracy", 0.95)
+	mlflow.pytorch.log_model(model, name="model")
 ```
 
 **Q103.** Fix this GitHub Actions YAML that has a multi-line indentation error:
@@ -515,12 +608,29 @@ mlflow.pytorch.log_model(model, name="model")
 python -c "import torch; print('Ready!')"
 ```
 
-**Q104.** What's wrong with this DVC-based CI pipeline step?
+**Answer:**
 ```yaml
+- name: Model Dry Test
+  run: |
+	python -c "import torch; print('Ready!')"
+```
+
+==**Q104.**== What's wrong with this DVC-based CI pipeline step?
+```yaml
+
 - name: Pull Data
   run: dvc pull
 ```
 (Hint: What step is missing before this?)
+
+**Answer:**
+
+```yaml
+run: actions/checkout@v4
+- name: Pull Data
+  run: dvc pull
+```
+
 
 **Q105.** This Service YAML has an error. The app runs on port 8501 inside the container but the Service doesn't work:
 ```yaml
@@ -535,10 +645,30 @@ spec:
       nodePort: 30085
 ```
 
+**Answer:**
+```yaml
+spec:
+  type: NodePort
+  selector:
+    app: streamlit-web
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 89501   # ← What's wrong?
+      nodePort: 30085
+```
+
 **Q106.** Identify the security issue in this workflow step:
 ```yaml
 - name: Docker Login
   run: docker login -u "admin" -p "SuperSecret123" 
+```
+
+**Answer:**
+
+```yaml
+- name: Docker Login
+  run: docker login -u ${{secrets.DOCKER_USERNAME}} -p {{secrets.DOCKER_PASSWORD}}
 ```
 
 **Q107.** What happens when you run this pipeline?
@@ -556,6 +686,21 @@ jobs:
 ```
 (What is missing from the `deploy` job?)
 
+```yaml
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - run: python train.py --smoke-test
+
+  deploy:
+	needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - run: docker build -t app:latest .
+```
+
+
 **Q108.** Fix this Dockerfile that accepts a model path:
 ```dockerfile
 FROM python:3.10-slim
@@ -567,6 +712,18 @@ CMD ["python", "serve.py"]
 ```
 (Hint: How do you define build-time arguments vs. runtime environment variables?)
 
+Answer:
+
+```dockerfile
+FROM python:3.10-slim
+ARG MODEL_PATH
+ENV MODEL_PATH=/opt/model        
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+CMD ["python", "serve.py"]
+```
+
 **Q109.** This Kubeflow component is incorrect. What's the issue?
 ```python
 @dsl.component(base_image='python:3.9')
@@ -575,14 +732,32 @@ def preprocess(data_path: str):
     return cleaned   # ← Problem?
 ```
 
+**Answer:**
+
+
 **Q110.** What is the issue with this Kubernetes command for scaling?
 ```bash
 kubectl scale pod my-pod --replicas=5
 ```
 
+Answer:
+
+```bash
+kubectl scale deployment my-deployment --replicas=5
+```
+
 **Q111.** Fix this GitHub Actions workflow. The linter step is empty:
 ```yaml
 - name: Linter Check
+```
+
+Answer:
+
+```yaml
+- name: Linter Check
+  run:| 
+	  pip install flake8
+	  flake8 .
 ```
 
 **Q112.** This YAML deploys but the gateway never becomes accessible. Why?
@@ -608,6 +783,9 @@ spec:
 ```
 (Hint: What Kubernetes resource is missing entirely?)
 
+**Answer:** Missing service yaml . the deployment creates Pods but there is no service to expose them.
+
+
 **Q113.** What's wrong with this `if` condition?
 ```yaml
 train:
@@ -618,6 +796,19 @@ train:
 ```
 (Hint: What check is missing for cost protection?)
 
+**Answer:**  
+
+```yaml
+train:
+  runs-on: ubuntu-latest
+  needs: lint
+  if: >
+    github.ref_name == 'main' &&
+    contains(github.event.head_commit.message, '[run-train]')
+```
+
+to avoid running expensive training on broken code
+
 **Q114.** Fix the secret access in this step:
 ```yaml
 - name: Train
@@ -626,10 +817,24 @@ train:
   run: python train.py
 ```
 
+**Answer:**  
+
+```yaml
+- name: Train
+  env:
+    MLFLOW_URI: ${{ secrets.MLFLOW_URI }}
+  run: python train.py
+```
+
+
 **Q115.** This Docker command maps a directory but it won't work on a CI runner. Why?
 ```bash
 docker run -v /home/mohamed/data:/app/data my-image
 ```
+
+**Answer:**  
+because it is host independent  and won't exist on CI runner. Use Docker volumes or download data in the pipeline
+
 
 **Q116.** What's wrong with setting an env variable in one step and reading it in the next?
 ```yaml
@@ -638,6 +843,12 @@ steps:
     run: VERSION="v1.2.3"
   - name: Tag Model
     run: echo "Tagging model as $VERSION"
+```
+
+**Answer:
+
+```yaml
+
 ```
 
 **Q117.** What is wrong with this K8s service definition?
@@ -650,6 +861,20 @@ spec:
     - port: 80
       targetPort: 8501
       nodePort: 25000    # ← Problem?
+```
+
+**Answer:
+Must be  between 30000- 32767 
+
+```yaml
+spec:
+  type: NodePort
+  selector:
+    app: streamlit-web
+  ports:
+    - port: 80
+      targetPort: 8501
+      nodePort: 30000  # ← Problem?
 ```
 
 **Q118.** Fix this pipeline to implement proper failure handling:
@@ -665,8 +890,32 @@ steps:
       path: logs/
 ```
 (What condition should the Upload Logs step have?)
+**Answer:
+add if failure()
+
+```yaml
+steps:
+  - name: Heavy Training
+    run: python train.py   # might fail
+	
+  - name: Upload Logs
+    if: failure()
+    uses: actions/upload-artifact@v4
+    with:
+      name: crash-report
+      path: logs/
+```
 
 **Q119.** What will happen when this Kubeflow pipeline re-runs after a failure in `train_model`?
+```python
+@dsl.pipeline(name="my-pipeline")
+def pipeline():
+    prep = preprocess_data(data_path="s3://data/v1")  # Takes 2 hours
+    train = train_model(data=prep.outputs['cleaned'], lr=0.01)  # Failed!
+```
+
+**Answer:**
+
 ```python
 @dsl.pipeline(name="my-pipeline")
 def pipeline():
@@ -683,27 +932,63 @@ RUN pip install -r requirements.txt
 CMD ["python", "app.py"]
 ```
 
+**Answer:**
+run pip install means any code change invalidates the pip install cache, should copy requirements first, install, then copy code
+
+```dockerfile
+FROM python:3.9
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+
+CMD ["python", "app.py"]
+```
+
 ---
 
 ## Section E: Scenario-Based Analysis
 
 **Q121.** You deploy a text-to-image model. K8s metrics show 200 OK, stable GPU, low latency. But users say the images look "soulless." What two types of drift could explain this? How would you design a monitoring system to detect and fix this?
+<details>
+<summary>Answer</summary>
+ prompt drift + concept drift
+
 
 **Q122.** Researcher A submits a 60GB RAM job. Researcher B submits an 8GB RAM + 1 GPU job. The server has 64GB RAM total. Compare what happens with:
 (a) GitHub Actions self-hosted runner
 (b) Kubeflow pipelines
+
+<details>
+<summary>Answer</summary>
+(a) it will stop working because both jobs start simultianeously -->OOM kills one (68>64 GB)
+(b) Queue Job B in pending until job A finishes, ensuring safe execution
+
 
 **Q123.** Your CI pipeline has 5 steps: Checkout → Install → Lint → Train (4 hours) → Deploy. The training fails at hour 3. You re-run the pipeline. What happens with:
 (a) GitHub Actions
 (b) Kubeflow Pipelines
 Which is more cost-effective and why?
 
+<details>
+<summary>Answer</summary>
+(a)  it will rerun from the beginning ( the entire pipeline restart)
+(b) it will run from step 3 (train)
+
 **Q124.** A team of 5 data scientists is training models simultaneously. They all use different hyperparameters. Design a system using MLflow, Docker, and GitHub Actions that allows them to:
 - Track all experiments centrally
 - Compare results
 - Deploy only the best model
 
+<details>
+<summary>Answer</summary>
+shared MLflow for all experiments, each scientist trains with different params logged to MLFlow, CI pipeline with get_best_model.py finds top model. CD build docker with best model URI
+
 **Q125.** You have a Kubernetes cluster with 3 worker nodes. You deploy a model with `replicas: 5`. One worker node goes down. What happens to the Pods on that node? Describe the K8s self-healing mechanism step by step.
+
+<details>
+<summary>Answer</summary>
+the desired number of pods are 5 (default 1 pod per node) , it will create 3 pods and it will assign them to the 2 remaining nodes
 
 **Q126.** Design a complete CI/CD pipeline (YAML structure) for a medical AI model that:
 - Only trains on `main` branch with `[train]` in commit message
@@ -713,7 +998,12 @@ Which is more cost-effective and why?
 - Uploads failure logs on failure
 - Always cleans up cloud resources
 
+<details>
+<summary>Answer</summary>
+
 **Q127.** Explain why you would use DVC in addition to Git for an ML project with a 5GB training dataset, 200MB model weights, and 500 lines of Python code. Which files go in Git vs. DVC?
+<details>
+<summary>Answer</summary>
 
 **Q128.** Your PersonaCanvas app has a Streamlit frontend and an AI backend. Both are deployed in K8s. The frontend needs to call the backend API. Design the networking using K8s Services. Which service type do you use for each and why?
 
@@ -758,6 +1048,7 @@ CMD ["python", "train.py"]
 **Q136. (5 pts)** Define MLOps and explain how it differs from DevOps and DataOps. What additional concerns does MLOps address?
 
 **Q137. (8 pts)** Given this broken YAML, find and fix ALL errors (minimum 5 bugs). Explain each fix:
+
 ```yaml
 name: ML Pipeline
 on:
@@ -778,6 +1069,34 @@ jobs:
             run: |
             python train.py
   deploy:
+    steps:
+      - run: docker build -t app .
+```
+Answer:
+
+```yaml
+name: ML Pipeline
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Setup Python
+            uses: actions/setup-python@v5
+            with:
+                python-version: '3.10'
+        - name: Install
+          run: pip install -r requirements.txt
+        - name: Linter
+        - run:: | pip install linter
+	           flake8 .
+        - name: Train
+            run: |
+            python train.py
+  deploy:
+	 needs: build
     steps:
       - run: docker build -t app .
 ```
